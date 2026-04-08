@@ -1,0 +1,249 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  background-color: #fff;
+}
+
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ===== Header / Profile ===== */
+.profile {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.profile-photo {
+  flex-shrink: 0;
+}
+
+.profile-photo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h1 {
+  font-size: 2em;
+  color: #1772d0;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.profile-info .title {
+  font-size: 1.05em;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.profile-info .affiliation {
+  font-size: 1.05em;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.profile-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.profile-links a {
+  font-size: 0.95em;
+  padding: 4px 0;
+  font-weight: 500;
+}
+
+/* ===== Section Headings ===== */
+.section-title {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #eee;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+/* ===== About / Bio ===== */
+.about h3 {
+  font-size: 1.15em;
+  color: #1772d0;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.about p {
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+/* ===== Team ===== */
+.team-photo {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.team-photo img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* ===== News ===== */
+.news-list {
+  list-style: none;
+}
+
+.news-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.95em;
+}
+
+.news-list li:last-child {
+  border-bottom: none;
+}
+
+.news-date {
+  color: #888;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+/* ===== Publications ===== */
+.pub-item {
+  margin-bottom: 36px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.pub-item:last-child {
+  border-bottom: none;
+}
+
+.pub-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.pub-title a {
+  color: #1772d0;
+}
+
+.pub-authors {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.pub-authors .me {
+  font-weight: 700;
+  color: #333;
+}
+
+.pub-venue {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.pub-links {
+  margin-bottom: 10px;
+}
+
+.pub-links a {
+  font-size: 0.85em;
+  margin-right: 12px;
+  color: #1772d0;
+  font-weight: 500;
+}
+
+.pub-abstract {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.85em;
+  color: #999;
+  border-top: 1px solid #eee;
+}
+
+footer a {
+  color: #999;
+}
+
+footer a:hover {
+  color: #1772d0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .profile-links {
+    justify-content: center;
+  }
+
+  .profile-info h1 {
+    font-size: 1.6em;
+  }
+
+  .container {
+    padding: 20px 16px;
+  }
+
+  .section-title {
+    font-size: 1.3em;
+  }
+}
