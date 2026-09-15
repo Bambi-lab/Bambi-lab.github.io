@@ -1,267 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>赵奕茗 - 个人主页</title>
-  <meta name="description" content="个人学术主页">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#030712">
+  <meta name="description" content="关于肖淑媛走过的 21 年，以及赵奕茗想陪她走的以后。">
+  <title>致21岁的肖淑媛</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23030712'/%3E%3Cpath d='M32 9l3.8 16.8L52 32l-16.2 6.2L32 55l-3.8-16.8L12 32l16.2-6.2z' fill='%23f5d9a4'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="is-locked">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
 
-<div class="container">
+  <div class="journey-progress" id="journeyProgress" aria-hidden="true"><span></span></div>
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="暂停背景音乐" aria-pressed="true">
+    <span class="music-toggle__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="music-toggle__label">音乐</span>
+  </button>
 
-  <!-- ==================== 头部 ==================== -->
-  <header class="profile">
-    <div class="profile-photo">
-      <!-- 替换为你的照片路径 -->
-      <img src="images/me.png" alt="个人照片">
-    </div>
-    <div class="profile-info">
-      <h1>赵奕茗</h1>
-      <p class="title">硕士研究生</p>
-      <p class="affiliation">国防科技大学电子科学学院</p>
-      <div class="profile-links">
-        <a href="mailto:zhaoyiming25@nudt.edu.cn">Email</a>
-        <a href="https://scholar.google.com/citations?user=PGGbjf0AAAAJ&hl=zh-CN" target="_blank" rel="noreferrer">Google Scholar</a>
-        <a href="https://github.com/Bambi-lab" target="_blank" rel="noreferrer">GitHub</a>
+  <main>
+    <section class="opening" id="opening" aria-labelledby="opening-title">
+      <div class="opening__content">
+        <p class="opening__year" aria-hidden="true">2005</p>
+        <h1 id="opening-title" class="opening__line">那一年，<br>世界上多了一个叫肖淑媛的小女孩。</h1>
+        <figure class="opening__photo">
+          <img src="images/1.jpg" alt="肖淑媛小时候的照片">
+          <span class="opening__scan" aria-hidden="true"></span>
+        </figure>
+        <button class="enter-button" id="enterUniverse" type="button">
+          <span>进入属于你的宇宙</span><i aria-hidden="true"></i>
+        </button>
       </div>
-    </div>
-  </header>
+      <p class="opening__note">建议在安静的地方，慢慢看。</p>
+    </section>
 
-  <!-- ==================== 个人简介 ==================== -->
-  <section class="about">
-    <h2 class="section-title">个人简介</h2>
-
-    <h3>一、我是谁</h3>
-    <p>
-      我是一名人工智能与光芯片交叉领域的科研工作者，现为国防科技大学电子科学学院电子信息专业硕士研究生，师从宋兵副教授。
-    </p>
-    <p>
-      我在苏鹏翔老师、魏勍颋副教授和魏欣副教授的指导下，2025年于南昌大学软件工程学院获得工学学士学位，并以软件工程系综合排名1.3%的身份保研至国防科技大学。我是软件工程2107班的成员。
-    </p>
-
-    <h3>二、研究兴趣与学术追求</h3>
-    <p>
-      我目前的研究专注于片上光神经网络的设计与优化，致力于推动人工智能与光芯片技术的融合发展。我的研究兴趣包括但不限于以下几个方向：
-    </p>
-    <ul class="interest-list">
-      <li><strong>片上光神经网络架构设计：</strong>探索高效的光神经网络结构，以提升计算性能和能效。</li>
-      <li><strong>光神经网络的训练与量化：</strong>研究适用于光神经网络的训练和量化算法，推进光神经网络的训练和部署。</li>
-      <li><strong>光芯片技术在人工智能中的创新应用：</strong>如图像识别、自然语言处理等。</li>
-    </ul>
-    <p>
-      同时我的研究还聚焦于光纤水声探测领域，探究水声信号处理和光学相变干涉信号调制解调算法，结合深度学习、计算机视觉、信号处理、数学、物理、工程等学科知识，为水声探测领域提供新的思路。
-    </p>
-
-    <h3>三、个人发展理念</h3>
-    <p>
-      我热爱技术，喜欢尝试各种新鲜事物。相较于成为行业专家，我更希望成为一个技术通才，能够在多个领域进行跨界研究和创新。我相信，只有不断学习和探索未知，才能不被AI替代，保持自己的核心竞争力。
-    </p>  
-
-    <h3>四、个人性格</h3>
-    <p>
-      关于我这个人：情绪稳定、通情达理、讲原则、喜欢先独立思考后再与人交流。
-    </p>
-    <p>
-      由于是程序员出身，我更擅长独立思考解决问题，但多个团队比赛和社团活动经历也让我非常重视团队合作和交流。我喜欢自由探索，喜欢尝试新技术，喜欢在不受限制的环境中发挥创造力，这也是我为什么选择继续读研的原因之一。我相信，只有在一个开放和包容的环境中，才能激发出最好的创新和成果。
-    </p>
-
-    <h3>五、写在最后</h3>
-    <p>
-      欢迎对我的研究感兴趣的同学和学者联系我，期待与志同道合的伙伴一起探索学术前沿。
-    </p>
-    <div class="wechat-qr">
-      <img src="images/wechat.jpg" alt="微信二维码" loading="lazy">
-      <p class="wechat-qr-note">欢迎扫码添加微信交流</p>
-    </div>
-  </section>
-
-  <!-- ==================== 团队风采 ==================== -->
-  <section class="team">
-    <h2 class="section-title">个人风采</h2>
-    <div class="team-carousel" data-carousel>
-      <button class="carousel-btn prev" type="button" aria-label="上一张">&#10094;</button>
-      <div class="team-track" id="teamTrack" aria-label="团队合照轮播" tabindex="0">
-        <figure class="team-slide">
-          <img src="images/1.jpg" alt="个人风采照片 1" loading="lazy">
-        </figure>
-        <figure class="team-slide">
-          <img src="images/2.jpg" alt="个人风采照片 2" loading="lazy">
-        </figure>
-        <figure class="team-slide">
-          <img src="images/3.jpg" alt="个人风采照片 3" loading="lazy">
-        </figure>
-        <figure class="team-slide">
-          <img src="images/4.jpg" alt="个人风采照片 4" loading="lazy">
-        </figure>
-        <figure class="team-slide">
-          <img src="images/5.jpg" alt="个人风采照片 5" loading="lazy">
-        </figure>
-        <figure class="team-slide">
-          <img src="images/6.jpg" alt="个人风采照片 6" loading="lazy">
-        </figure>
-        <figure class="team-slide">
-          <img src="images/7.jpg" alt="个人风采照片 7" loading="lazy">
-        </figure>
-        <figure class="team-slide">
-          <img src="images/8.jpg" alt="个人风采照片 8" loading="lazy">
-        </figure>
+    <section class="prologue" id="universe" aria-labelledby="page-title">
+      <div class="prologue__orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="prologue__content reveal-on-view">
+        <p class="eyebrow">A SMALL UNIVERSE · FOR YOU</p>
+        <h2 id="page-title">致21岁的<br><em>肖淑媛</em></h2>
+        <p class="prologue__lead">关于你走过的21年，<br>以及我想陪你走的以后。</p>
+        <div class="prologue__rule" aria-hidden="true"><i></i></div>
+        <p class="prologue__note">21张照片，是21颗被好好留下的星星。</p>
       </div>
-      <button class="carousel-btn next" type="button" aria-label="下一张">&#10095;</button>
-    </div>
-    <div class="team-dots" aria-label="轮播位置指示">
-      <button type="button" class="dot active" data-slide="0" aria-label="切换到第1张"></button>
-      <button type="button" class="dot" data-slide="1" aria-label="切换到第2张"></button>
-      <button type="button" class="dot" data-slide="2" aria-label="切换到第3张"></button>
-      <button type="button" class="dot" data-slide="3" aria-label="切换到第4张"></button>
-      <button type="button" class="dot" data-slide="4" aria-label="切换到第5张"></button>
-      <button type="button" class="dot" data-slide="5" aria-label="切换到第6张"></button>
-      <button type="button" class="dot" data-slide="6" aria-label="切换到第7张"></button>
-      <button type="button" class="dot" data-slide="7" aria-label="切换到第8张"></button>
-    </div>
-    <p class="team-tip">可左右滑动或点击按钮浏览</p>
-  </section>
+      <div class="scroll-cue" aria-hidden="true"><span></span><small>向下，去看看它们</small></div>
+    </section>
 
-  <!-- ==================== 新闻动态 ==================== -->
-  <section class="news">
-    <h2 class="section-title">新闻动态</h2>
-    <ul class="news-list">
-      <li>
-        <span class="news-date">2025年12月：</span>
-        发明专利 "一种图像分类方法及相关装置、设备、存储介质" 被授权！
-      </li>
-      <li>
-        <span class="news-date">2025年11月：</span>
-        论文 "Edge-guided Multi-scale Attention Fusion Network for Gastrointestinal Tumor Image Classification" 被 Alexandria Engineering Journal 录用！
-      </li>
-      <li>
-        <span class="news-date">2025年6月：</span>
-        国家级大创 "基于多模态特征学习的 MRI 影像阿尔茨海默症病灶分割方法研究" 顺利结题！
-      </li>
-      <li>
-        <span class="news-date">2025年6月：</span>
-        国家级大创 "基于深度神经网络的脑电情绪识别与应用" 顺利结题！
-      </li>
-      <li>
-        <span class="news-date">2025年4月：</span>
-        软著 "阿尔兹海默智能诊断平台V1.0" 被授权！
-      </li>
-      <li>
-        <span class="news-date">2024年6月：</span>
-        发明专利 "一种基于全局-局部特征的行人检测方法" 被授权！
-      </li>
-      <li>
-        <span class="news-date">2024年5月：</span>
-        软件著作 "人体运动数据测试平台 V1.0" 被授权！
-      </li>
-      <li>
-        <span class="news-date">2024年4月：</span>
-        论文 "Global-to-Local Modeling for Pedestrian Detection" 被 journal of intelligent & fuzzy systems 录用！
-      </li>
-      <li>
-        <span class="news-date">2024年4月：</span>
-        论文 "Design and Implementation of Pedestrian Target Tracking System Based on YOLO Architecture" 被 AIAC 2023 录用！
-      </li>
-      <li>
-        <span class="news-date">2023年6月：</span>
-        省部级科研训练项目 "基于深度学习的股票数据分析软件研发" 顺利结题！
-      </li>
-    </ul>
-  </section>
+    <section class="memory-journey" id="memories" aria-label="二十一颗回忆星星">
+      <div class="memory-stage">
+        <div class="memory-stage__wash" aria-hidden="true"></div>
+        <header class="memory-stage__header">
+          <p>21 YEARS · 21 STARS</p>
+          <div class="memory-counter"><strong id="memoryNumber">01</strong><span>/ 21</span></div>
+        </header>
+        <nav class="constellation" id="constellation" aria-label="选择一颗回忆星星"></nav>
 
-  <!-- ==================== 发表论文 ==================== -->
-  <section class="publications">
-    <h2 class="section-title">发表论文</h2>
+        <article class="memory-view" id="memoryView" aria-live="polite">
+          <div class="memory-view__halo" aria-hidden="true"></div>
+          <figure class="memory-frame">
+            <img id="memoryImage" src="images/1.jpg" alt="肖淑媛的第 1 颗回忆星星">
+            <span class="memory-frame__glint" aria-hidden="true"></span>
+          </figure>
+          <div class="memory-copy">
+            <p class="memory-kicker" id="memoryKicker">第 01 颗星 · 成长</p>
+            <h3 id="memoryCaption">故事从这里开始。</h3>
+            <span class="memory-index" id="memoryIndex">01</span>
+          </div>
+        </article>
 
-    <!-- 论文 1 -->
-    <div class="pub-item">
-      <div class="pub-figure">
-        <img src="images/paper1.png" alt="论文1 Figure图" loading="lazy">
+        <article class="milestone-view" id="milestoneView" aria-live="polite">
+          <p class="milestone-label" id="milestoneLabel">THE DAY WE MET</p>
+          <time id="milestoneDate">2026.04.19</time>
+          <h3 id="milestoneText">在这个很大的世界里，<br>我们遇见了。</h3>
+        </article>
+        <p class="memory-hint"><span aria-hidden="true"></span>滑动，或点亮任意一颗星</p>
       </div>
-      <div class="pub-content">
-        <div class="pub-title">
-          <a href="https://www.sciencedirect.com/science/article/pii/S1110016825011603" target="_blank" rel="noreferrer">Edge-guided Multi-scale Attention Fusion Network for gastrointestinal tumor image classification</a>
+      <div class="memory-steps" id="memorySteps" aria-hidden="true"></div>
+    </section>
+
+    <section class="interlude reveal-on-view" aria-label="二十一颗星的含义">
+      <p>你走过的二十一年，</p>
+      <h2>并不是二十一张静止的照片。</h2>
+      <p>它们是很多个被时间留下的你，<br>也是我想认真珍藏的每一个瞬间。</p>
+    </section>
+
+    <section class="transformation" id="transformation" aria-label="星星汇聚成名字、爱心与玫瑰">
+      <div class="transformation__sticky">
+        <canvas id="morphCanvas" aria-hidden="true"></canvas>
+        <div class="morph-ring" id="morphRing" aria-hidden="true"></div>
+        <div class="morph-copy morph-copy--name" data-morph-copy="name"><p>二十一颗星，正在记住同一个名字。</p></div>
+        <div class="morph-copy morph-copy--heart" data-morph-copy="heart"><p>所有散落的时刻，最后都有了方向。</p></div>
+        <div class="morph-copy morph-copy--rose" data-morph-copy="rose">
+          <p>现实里的花会凋谢。</p>
+          <p>所以我想做一束，<br>一直留在这里的花。</p>
+          <small>21朵，送给21岁的肖淑媛。</small>
         </div>
-        <div class="pub-authors">
-          Bin Xu, Qiaoli Lv, Chengyan Bian, Kangpeng Yan, Wenjie Fang, Jiao Cai, Sunmin Chen, Qi Wang*, <span class="me">Yiming Zhao*</span>, Xingchen Wu*, Hengrui Liu, Hua Li*
-        </div>
-        <div class="pub-venue">
-          Alexandria Engineering Journal, 2026
-        </div>
-        <div class="pub-links">
-          <a href="https://www.sciencedirect.com/science/article/pii/S1110016825011603" target="_blank" rel="noreferrer">PDF</a>
-          <a href="https://github.com/Bambi-lab/EdgeMAF-Net" target="_blank" rel="noreferrer">Code</a>
-        </div>
-        <div class="pub-abstract">
-          Automated classification of gastrointestinal tumor images is a pivotal technology in computer-aided diagnostic systems. However, medical images are often affected by high-frequency noise due to limitations of acquisition devices and intrinsic tissue characteristics. In addition, lesion regions frequently exhibit blurred edges and low contrast, posing challenges for accurate extraction of discriminative features. To address these challenges, we propose a novel Edge-guided Multi-scale Attention Fusion Network (EdgeMAF-Net) for gastrointestinal tumor image classification. Specifically, we introduce a cross-stage partial fusion module that dynamically allocates features to both CNN and Transformer branches, enabling simultaneous modeling of local details and global context. This is complemented by a high-frequency attenuation and noise suppression mechanism, as well as a multi-scale edge attention calibration module, which integrates a three-stage enhancement strategy to capture features at different scales and delineate blurred boundaries. The module leverages a feature enhancement attention block to weight multi-source features, combined with a multi-scale edge enhancement block employing multi-scale pooling and edge extraction, and an adaptive gated fusion block to dynamically adjust feature fusion. EdgeMAF-Net outperforms existing methods in terms of accuracy, sensitivity, and boundary localization on the Chaoyang, Kvasir, and GasHisSDB datasets. Our code is available at https://github.com/Bambi-lab/EdgeMAF-Net.
+        <div class="morph-scroll" aria-hidden="true">继续向下</div>
+      </div>
+    </section>
+
+    <section class="birthday" id="birthday" aria-labelledby="birthday-title">
+      <div class="birthday__content">
+        <p class="eyebrow">TWENTY-ONE · FOR YOU</p>
+        <h2 id="birthday-title">肖淑媛</h2>
+        <strong>21</strong>
+        <p class="birthday__wish">生日快乐。</p>
+        <button class="candle" id="candle" type="button" aria-label="点击蜡烛，吹灭烛火">
+          <span class="candle__glow" aria-hidden="true"></span>
+          <span class="candle__flame" aria-hidden="true"></span>
+          <span class="candle__wick" aria-hidden="true"></span>
+          <span class="candle__body" aria-hidden="true"></span>
+          <small>轻轻点一下，替21岁的你许个愿</small>
+        </button>
+        <div class="birthday__reveal" id="birthdayReveal" aria-live="polite">
+          <p>Happy 21st Birthday</p>
+          <h3>肖淑媛</h3>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- 论文 2 -->
-    <div class="pub-item">
-      <div class="pub-figure">
-        <img src="images/paper2.jpg" alt="论文2 Figure图" loading="lazy">
-      </div>
-      <div class="pub-content">
-        <div class="pub-title">
-          <a href="#">Global-to-Local Modeling for Pedestrian  Detection</a>
-        </div>
-        <div class="pub-authors">
-          <span class="me">Yiming Zhao</span>, Wenbo Lu, Pengxiang Su, Hong Chen, Junzhu Liu, Runyang Feng, Di Gai, and Zhijun Tu*
-        </div>
-        <div class="pub-venue">
-          journal of intelligent & fuzzy systems，2025
-        </div>
-        <div class="pub-links">
-          <a href="#">PDF</a>
-          <a href="https://github.com/Donglin223/GLIE_Model" target="_blank" rel="noreferrer">Code</a>
-        </div>
-        <div class="pub-abstract">
-          Pedestrian detection is a classic problem in computer vision, which aims at locating the pedestrian position from the given image or video. Current state-of-the-art methods concentrate on capturing human body contexts from the local view, which however remain challenging in extracting the complex shape and variable proportions of the human body information. In this paper, we advocate to encode the complementary pedestrian contexts and adaptive fuse closely related features at the global level. We also design a local feature extraction module to handle the complex body shape and aggregate different resolution features. Moreover, most existing methods consider generating detection results from a single resolution information, disregarding the diversity of features. Motivated by this, we present a novel detection module that captures various cues from multi-resolution features to obtain satisfactory pedestrian contexts. Empirical results demonstrate that our model outperforms state-of-the-art pedestrian detection methods on four benchmark datasets, including PASCAL VOC2012, CityPersons, WiderPerson, and Crowdhuman datasets.
+    <section class="finale" id="finale" aria-label="最后的告白">
+      <div class="finale__photo" aria-hidden="true"></div>
+      <div class="finale__photo-fit" aria-hidden="true"></div>
+      <div class="finale__shade" aria-hidden="true"></div>
+      <div class="finale__content">
+        <div class="finale__letter">
+          <p>肖淑媛，</p>
+          <p>谢谢你来到我的世界。</p>
+          <p>过去21年的你，<br>我没有参与。</p>
+          <p>但未来很多很多年，<br>如果你愿意，</p>
+          <p>我希望还能陪你一起走。</p>
+          <p class="finale__love">我爱你。</p>
+          <p class="finale__signature">—— 赵奕茗</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- 论文 3 -->
-    <div class="pub-item">
-      <div class="pub-figure">
-        <img src="images/paper3.jpg" alt="论文3 Figure图" loading="lazy">
-      </div>
-      <div class="pub-content">
-        <div class="pub-title">
-          <a href="#">Design and Implementation of Pedestrian Target Tracking System Based on YOLO Architecture</a>
-        </div>
-        <div class="pub-authors">
-          <span class="me">Yiming Zhao</span>
-        </div>
-        <div class="pub-venue">
-          AIAC, 2023
-        </div>
-        <div class="pub-links">
-          <a href="https://ieeexplore.ieee.org/abstract/document/10491692" target="_blank" rel="noreferrer">PDF</a>
-        </div>
-        <div class="pub-abstract">
-          Pedestrian tracking is an essential issue in the field of computer vision. Pedestrian tracking can be applied to safety monitoring in public places, such as airports, stations, shopping malls, etc. It can monitor the location and action trajectory of pedestrians in public places in real-time, which can quickly detect abnormal behaviors and take timely measures to prevent lawless elements from using public places for criminal activities, thus ensuring public safety. With the development of deep learning, the performance of pedestrian tracking algorithms is gradually improving. This article designs and implements a pedestrian target tracking system based on YOLOv5 and DeepSORT. The system introduces an excellent YOLOv5 detector into the DeepSORT algorithm, detects the tracking video frame by frame, and uses Kalman filtering to predict the target position. At the same time, the Hungarian algorithm is used to match the same target to achieve pedestrian tracking. After testing, this algorithm can significantly improve the issues of identity transformation and tracking errors caused by occlusion. At the same time, using PyQt5 to develop the system interaction interface, the system interface is straightforward, easy to understand and use. This system can help users better understand pedestrian movements, quickly respond to possible abnormal behaviors, and ensure social safety.
-        </div>
-      </div>
-    </div>
+    <footer class="secret" aria-label="隐藏彩蛋">
+      <button class="secret-star" id="secretStar" type="button" aria-label="一颗不起眼的小星星"><span aria-hidden="true"></span></button>
+      <p id="secretMessage" aria-live="polite">有一颗星星，好像还没睡。</p>
+    </footer>
+  </main>
 
-  </section>
-
-</div>
-
-<!-- ==================== 底部 ==================== -->
-<footer>
-  <p>
-    Website template from
-    <a href="https://github.com/jonbarron/jonbarron.github.io" target="_blank" rel="noreferrer">Jon Barron</a>.
-  </p>
-  <p>&copy; 2026 zhaoyiming. All rights reserved.</p>
-</footer>
-
-<script src="js/team-carousel.js"></script>
-<script src="js/pub-abstract-toggle.js"></script>
+  <div class="blackout" id="blackout" aria-hidden="true"></div>
+  <audio id="backgroundMusic" src="assets/audio/birthday-theme.mp3" loop preload="auto"></audio>
+  <script src="js/rose.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
